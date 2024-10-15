@@ -1,3 +1,29 @@
 <resources>
-    <string name="app_name">Nhom HDC - App Dat Xe</string>
+    <string name="app_name">Go Travel</string>
+    <string name="logo">logo </string>
+    <string name="GoTravel">GoTravel</string>
+    <string name="Start">Bắt đầu</string>
+    <string name="location">Điểm đến phổ biến</string>
+    <string name="welcome">GoTravel chào bạn</string>
+    <string name="yourphone">Xin vui lòng nhập số điện thoại</string>
+    <string name="phone">Số điện thoại</string>
+    <string name="next">Tiếp tục</string>
+    <string name="find">Tìm kiếm</string>
+    <string name="car">xe oto</string>
+    <string name="moto">xe máy</string>
+    <string name="all">tất cả</string>
+    <string name="deal">Giảm giá hấp dẫn</string>
+    <string name="rewards">GoRewards: 1000</string>
+    <string name="food">đồ ăn</string>
+    <string name="add_card">thêm thẻ</string>
+    <string name="rewards_points">GoRewards</string>
+    <string name="home">Trang Chủ</string>
+    <string name="activity">Hoạt Động</string>
+    <string name="pay">Thanh Toán</string>
+    <string name="mess">Tin Nhắn</string>
+    <string name="profile">Tài Khoản</string>
+    <string name="map">Bản đồ</string>
+    <string name="back">Back button</string>
+    <string name="book_now">Đặt ngay</string>
+    <string name="rider_with_offers">Rider with offers</string>
 </resources>
