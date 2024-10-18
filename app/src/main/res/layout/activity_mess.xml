@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:padding="20dp"
+    android:background="@color/black2"
+    android:gravity="center">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="top|center"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="Tin nhắn"
+            android:textSize="30sp"
+            android:layout_marginTop="20sp"
+            android:layout_marginLeft="5sp"
+            android:textColor="@color/black"
+            android:layout_gravity="left"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+            <Button
+                android:id="@+id/button_mess1"
+                android:layout_width="170sp"
+                android:layout_height="50sp"
+                android:backgroundTint="@color/yellow"
+                android:text="Trò chuyện"
+                android:textSize="20sp" />
+            <Button
+                android:id="@+id/button_mess2"
+                android:layout_width="170sp"
+                android:layout_height="50sp"
+                android:backgroundTint="@color/yellow"
+                android:layout_marginLeft="30sp"
+                android:text="Thông báo"
+                android:textSize="20sp" />
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="_________________________________________________________"
+            android:textColor="@color/white"/>
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:src="@drawable/icon_support"
+            android:layout_gravity="center"
+            android:layout_marginTop="90sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:text="Xem cuộc trò chuyện của bạn với nhân viên hỗ trợ tại đây !"
+            android:textSize="20sp"
+            android:textAlignment="center"
+            android:layout_marginTop="20sp"
+            android:textColor="@color/black" />
+        <TextView
+            android:layout_width="250sp"
+            android:layout_height="60dp"
+            android:text="Bạn cũng có thể yêu cầu hỗ trợ thông qua "
+            android:textSize="20sp"
+            android:textAlignment="center"
+            android:layout_marginTop="10sp"
+            android:textColor="@color/black3" />
+
+        <TextView
+            android:layout_width="200sp"
+            android:layout_height="30dp"
+            android:linksClickable="true"
+            android:text="Trung tâm hỗ trợ "
+            android:textAlignment="center"
+            android:textColor="@color/yellow"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+</LinearLayout>
