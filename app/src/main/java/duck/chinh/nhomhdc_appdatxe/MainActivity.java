@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(MainActivity.this, PhoneInputActivity.class);
+                Intent intent = new Intent(MainActivity.this, dangnhap.class);
                 startActivity(intent);
                 finish();
             }
