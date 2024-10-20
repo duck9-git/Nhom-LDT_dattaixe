@@ -83,7 +83,7 @@ public class HomeActivity extends AppCompatActivity {
                 } else if (item.getItemId() == R.id.payment) {
                     selectedFragment = new WalletFragment();
                 } else if (item.getItemId() == R.id.profile) {
-                    selectedFragment = new Fragment();
+                    selectedFragment = new AccountFragment();
                 }
 
                 return loadFragment(selectedFragment);

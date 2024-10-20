@@ -26,4 +26,6 @@
     <string name="back">Back button</string>
     <string name="book_now">Đặt ngay</string>
     <string name="rider_with_offers">Rider with offers</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

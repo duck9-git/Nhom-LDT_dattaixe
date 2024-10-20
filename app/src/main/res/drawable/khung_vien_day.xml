@@ -1,0 +1,10 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <solid android:color="#518055" /> <!-- Màu nền -->
+
+    <corners
+        android:bottomLeftRadius="30dp"
+        android:bottomRightRadius="30dp" /> <!-- Bo góc ở đáy -->
+
+</shape>
