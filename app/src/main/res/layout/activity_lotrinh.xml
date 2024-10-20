@@ -47,9 +47,7 @@
                 android:layout_marginEnd="20dp"
                 android:background="#d9d9d9"
                 android:drawableStart="@drawable/vitricuaban"
-                android:drawableBottom="10dp"
                 android:drawablePadding="5dp"
-                android:ems="10"
                 android:hint="Vị trí của bạn"
                 android:inputType="text"
                 android:padding="5dp" />
@@ -65,7 +63,6 @@
                 android:background="#d9d9d9"
                 android:drawableStart="@drawable/vitrimuonden"
                 android:drawablePadding="5dp"
-                android:ems="10"
                 android:hint="Vị trí bạn muốn đến"
                 android:inputType="text"
                 android:padding="5dp" />
