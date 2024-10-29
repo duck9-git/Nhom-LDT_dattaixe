@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp">
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="top|center"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+
+            <Button
+                android:id="@+id/button_backnv"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="20sp"
+                android:text="a"
+                android:drawableRight="@drawable/icon_back_nv"
+                android:backgroundTint="@color/white" />
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:text="Tiền thưởng"
+                android:textSize="25sp"
+                android:textColor="@color/black"
+                android:layout_gravity="center"/>
+        </LinearLayout>
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tablayout_nv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/Diamond_tab_nv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"    />
+    </LinearLayout>
+
+</LinearLayout>

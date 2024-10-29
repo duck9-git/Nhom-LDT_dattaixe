@@ -13,6 +13,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class nv_home extends AppCompatActivity {
+
+
     private boolean isConnected = false;
 
     @Override
@@ -68,7 +70,17 @@ public class nv_home extends AppCompatActivity {
                 }
             }
         });
+        TextView textView13 = findViewById(R.id.textView13);
 
+        // Thiết lập sự kiện khi nhấn vào TextView
+        textView13.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Chuyển sang MainActivity2
+                Intent intent = new Intent(nv_home.this, MainActivity2.class);
+                startActivity(intent);
+            }
+        });
 
     }
 }

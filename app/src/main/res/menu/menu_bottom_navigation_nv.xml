@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/bottom_income_nv" android:title="@string/income" android:icon="@drawable/icon_money_nv"/>
+    <item android:id="@+id/bottom_diamond_nv" android:title="@string/diamond" android:icon="@drawable/icon_diamond_nv"/>
+    <item android:id="@+id/bottom_wallet_nv" android:title="@string/wallet" android:icon="@drawable/icon_wallet_nv"/>
+</menu>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="top|center"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+
+            <Button
+                android:id="@+id/button_backnv"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="20sp"
+                android:text="a"
+                android:drawableRight="@drawable/icon_back_nv"
+                android:backgroundTint="@color/white" />
+            <TextView
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:text="Thu Nhập"
+                android:textSize="25sp"
+                android:textColor="@color/black"
+                android:layout_gravity="center"/>
+
+            <Button
+                android:id="@+id/button_load_nv"
+                android:layout_width="100dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="70sp"
+                android:drawableRight="@drawable/icon_load_nv"
+                android:backgroundTint="@color/white" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:gravity="top|center"
+            android:orientation="vertical"
+            android:background="@drawable/vien_1"
+            android:layout_margin="10dp">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20sp"
+                android:layout_marginRight="60sp"
+                android:text="Thu nhập hôm nay"
+                android:textSize="20sp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60sp"
+                    android:text="0"
+                    android:textSize="50sp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$"
+                    android:textSize="30sp"/>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/button_chitiet_nv"
+                android:layout_width="170dp"
+                android:layout_height="60dp"
+                android:text="Xem chi tiết"
+                android:textSize="20sp"
+                android:textColor="@color/blue"
+                android:layout_marginRight="70sp"
+                android:backgroundTint="@color/black4"
+                android:background="@drawable/vien_1"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:gravity="top|center"
+            android:orientation="vertical"
+            android:background="@drawable/vien_2"
+            android:layout_margin="10dp">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30sp"
+                    android:text="Cuốc xe đã hoàn tất"
+                    android:textSize="23sp"/>
+
+                <Button
+                    android:id="@+id/button_chitiet2_nv"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginLeft="50sp"
+                    android:backgroundTint="@color/white"
+                    android:drawableRight="@drawable/baseline_arrow_forward_24" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="90sp"
+                android:text="0 cuốc xe"
+                android:textSize="22sp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

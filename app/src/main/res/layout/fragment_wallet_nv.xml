@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp">
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="top|center"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+
+            <Button
+                android:id="@+id/button_backnv"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="20sp"
+                android:text="a"
+                android:drawableRight="@drawable/icon_back_nv"
+                android:backgroundTint="@color/white" />
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:text="Ví"
+                android:textSize="30sp"
+                android:textColor="@color/black"
+                android:layout_gravity="center"/>
+
+            <Button
+                android:id="@+id/button_load_nv"
+                android:layout_width="100dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="140sp"
+                android:drawableRight="@drawable/icon_load_nv"
+                android:backgroundTint="@color/white" />
+        </LinearLayout>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/green2"
+            android:drawableLeft="@drawable/icon_money2_nv"
+            android:layout_marginTop="40sp"
+            android:text="Ví tín dụng"
+            android:textSize="25sp"
+            android:drawableRight="@drawable/baseline_arrow_forward_24" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/green2"
+            android:layout_marginTop="20dp"
+            android:drawableLeft="@drawable/icon_money2_nv"
+            android:text="Ví tiền mặt"
+            android:textSize="25sp"
+            android:drawableRight="@drawable/baseline_arrow_forward_24" />
+
+    </LinearLayout>
+</LinearLayout>
