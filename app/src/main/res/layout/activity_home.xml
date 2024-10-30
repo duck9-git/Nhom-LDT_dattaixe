@@ -132,12 +132,12 @@
 
                     android:layout_width="48dp"
                     android:layout_height="48dp"
-                    android:src="@drawable/ic_food" />
+                    android:src="@drawable/taixexeoto" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Đồ ăn"
+                    android:text="Tài xế ô tô"
                     android:textSize="14sp"
                     android:gravity="center"
                     android:layout_marginTop="4dp"/>
@@ -155,12 +155,12 @@
                     android:id="@+id/btn_all"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
-                    android:src="@drawable/ic_all" />
+                    android:src="@drawable/taixexemay" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Tất cả"
+                    android:text="Tài xế xe máy "
                     android:textSize="14sp"
                     android:gravity="center"
                     android:layout_marginTop="4dp"/>
