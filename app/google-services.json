@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "549106598050",
+    "firebase_url": "https://apptaixe-da6ad-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "apptaixe-da6ad",
+    "storage_bucket": "apptaixe-da6ad.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:549106598050:android:31081040bfb246adb857fb",
+        "android_client_info": {
+          "package_name": "duck.chinh.nhomhdc_appdatxe"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAUXB-_NJ119EHqvj8QDaZ4P9U18Kkx1fU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
