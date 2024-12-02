@@ -76,14 +76,14 @@
             android:textSize="18sp"
             android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/btn_book_now"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="1dp"
-            android:backgroundTint="#D9D9D9"
-            android:text="Đặt ngay"
-            android:textColor="@android:color/white" />
+            <Button
+                android:id="@+id/btn_book_now"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="1dp"
+                android:backgroundTint="#D9D9D9"
+                android:text="Đặt ngay"
+                android:textColor="@android:color/white" />
     </LinearLayout>
 
 

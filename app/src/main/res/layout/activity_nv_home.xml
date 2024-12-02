@@ -8,6 +8,7 @@
     android:background="@drawable/bandonv"
     tools:context=".nv_home">
 
+    <!-- TextView khung trên -->
     <TextView
         android:id="@+id/textView8"
         android:layout_width="match_parent"
@@ -18,6 +19,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <!-- TextView offline -->
     <TextView
         android:id="@+id/offline"
         android:layout_width="match_parent"
@@ -40,6 +42,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textView8" />
 
+    <!-- TextView bật kết nối -->
     <TextView
         android:id="@+id/batketnoi"
         android:layout_width="200dp"
@@ -60,6 +63,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <!-- LinearLayout chứa các lựa chọn -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="100dp"
@@ -75,7 +79,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/offline">
 
-
+        <!-- Dịch vụ -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -84,7 +88,6 @@
             android:layout_marginBottom="10dp"
             android:layout_weight="0.25"
             android:orientation="vertical">
-
             <ImageView
                 android:id="@+id/dichvu"
                 android:layout_width="wrap_content"
@@ -94,7 +97,6 @@
                 android:background="@drawable/bg_luachon"
                 android:padding="10dp"
                 app:srcCompat="@drawable/dichvu" />
-
             <TextView
                 android:id="@+id/txtdichvu"
                 android:layout_width="match_parent"
@@ -106,6 +108,7 @@
                 android:textSize="12sp" />
         </LinearLayout>
 
+        <!-- Tự động nhận -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -114,7 +117,6 @@
             android:layout_marginBottom="10dp"
             android:layout_weight="0.25"
             android:orientation="vertical">
-
             <ImageView
                 android:id="@+id/tudongnhan"
                 android:layout_width="wrap_content"
@@ -124,7 +126,6 @@
                 android:background="@drawable/bg_luachon"
                 android:padding="10dp"
                 app:srcCompat="@drawable/tudong" />
-
             <TextView
                 android:id="@+id/txttunhan"
                 android:layout_width="match_parent"
@@ -136,6 +137,7 @@
                 android:textSize="12sp" />
         </LinearLayout>
 
+        <!-- Go Now -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -144,7 +146,6 @@
             android:layout_marginBottom="10dp"
             android:layout_weight="0.25"
             android:orientation="vertical">
-
             <ImageView
                 android:id="@+id/gonow"
                 android:layout_width="wrap_content"
@@ -154,7 +155,6 @@
                 android:background="@drawable/bg_luachon"
                 android:padding="10sp"
                 app:srcCompat="@drawable/gonow" />
-
             <TextView
                 android:id="@+id/txtgonow"
                 android:layout_width="match_parent"
@@ -166,6 +166,7 @@
                 android:textSize="12sp" />
         </LinearLayout>
 
+        <!-- Xem thêm -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -174,7 +175,6 @@
             android:layout_marginBottom="10dp"
             android:layout_weight="0.25"
             android:orientation="vertical">
-
             <ImageView
                 android:id="@+id/xemthem"
                 android:layout_width="wrap_content"
@@ -185,7 +185,6 @@
                 android:padding="10dp"
                 android:contentDescription="Xem thêm"
                 app:srcCompat="@drawable/xemthem" />
-
             <TextView
                 android:id="@+id/txtxemthem"
                 android:layout_width="match_parent"
@@ -199,6 +198,7 @@
 
     </LinearLayout>
 
+    <!-- TextView cho thu nhập -->
     <TextView
         android:id="@+id/textView13"
         android:layout_width="wrap_content"
@@ -220,6 +220,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.050000012" />
 
+    <!-- Hình ảnh Avatar -->
     <ImageView
         android:id="@+id/imageView4"
         android:layout_width="wrap_content"
@@ -232,5 +233,45 @@
         app:layout_constraintVertical_bias="0.067"
         app:srcCompat="@drawable/avanv" />
 
+    <!-- TextView chờ yêu cầu -->
+    <TextView
+        android:id="@+id/requestTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:padding="16dp"
+        android:text="Đang chờ yêu cầu..."
+        android:textSize="16sp"
+        android:background="@drawable/rounded_border"
+        android:gravity="start|top"
+        android:scrollbars="vertical"
+    app:layout_constraintTop_toBottomOf="@+id/toolbar"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent" />
+
+
+    <!-- Toolbar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Button xác nhận yêu cầu -->
+    <Button
+        android:id="@+id/confirmRequestButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Xác nhận yêu cầu"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#518055"
+        android:textColor="@android:color/white"
+        app:layout_constraintTop_toBottomOf="@+id/requestTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

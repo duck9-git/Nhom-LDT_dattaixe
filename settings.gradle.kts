@@ -21,4 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Nhom HDC - App Dat Xe"
 include(":app")
- 
+
