@@ -1,7 +1,7 @@
 package duck.chinh.nhomhdc_appdatxe;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -31,24 +31,32 @@ public class lotrinh extends AppCompatActivity {
         // Khởi tạo nút đặt xe
         Button bookButton = findViewById(R.id.btn_book);
         bookButton.setOnClickListener(v -> {
+            // Tạo một tham chiếu tới Firebase Realtime Database
             FirebaseDatabase database = FirebaseDatabase.getInstance();
             DatabaseReference ref = database.getReference("requests");
 
-            String requestId = ref.push().getKey();
-            Request request = new Request("Khách hàng A", "Điểm đến: XYZ", "Chờ xử lý");
+            // Tạo ID yêu cầu ngẫu nhiên và gửi thông tin yêu cầu
+            String requestId = ref.push().getKey(); // Tạo ID ngẫu nhiên cho yêu cầu
+            Request request = new Request(
+                    "Khách hàng A", // Tên khách hàng
+                    "Điểm đến: XYZ", // Điểm đến
+                    "Chờ xử lý"      // Trạng thái ban đầu
+            );
 
+            // Lưu yêu cầu vào Firebase
             if (requestId != null) {
                 ref.child(requestId).setValue(request)
                         .addOnSuccessListener(aVoid -> {
-                            Toast.makeText(lotrinh.this, "Đặt xe thành công!", Toast.LENGTH_SHORT).show();
+                            // Sau khi đặt xe thành công, chuyển về HomeActivity và thông báo cho người dùng
+                            Intent intent = new Intent(lotrinh.this, HomeActivity.class);
+                            intent.putExtra("message", "Yêu cầu của bạn đang chờ tài xế xác nhận.");
+                            startActivity(intent);
                         })
                         .addOnFailureListener(e -> {
-                            // Log lỗi chi tiết để xem nguyên nhân
-                            Log.e("FirebaseError", "Lỗi khi ghi dữ liệu vào Firebase", e);
-                            Toast.makeText(lotrinh.this, "Đặt xe thất bại. Vui lòng thử lại.", Toast.LENGTH_SHORT).show();
+                            // Xử lý nếu có lỗi khi lưu vào Firebase
+                            Toast.makeText(lotrinh.this, "Đặt xe thất bại. Vui lòng thử lại!", Toast.LENGTH_SHORT).show();
                         });
             }
         });
-
     }
 }

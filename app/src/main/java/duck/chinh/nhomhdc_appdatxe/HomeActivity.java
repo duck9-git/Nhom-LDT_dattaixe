@@ -6,6 +6,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,11 +23,13 @@ public class HomeActivity extends AppCompatActivity {
 
     private ImageView btnXeMay, btnOto, btnAll;
     private EditText searchBar;
-
+    private TextView messageTextView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home); // tệp layout activity_home.xml
+        messageTextView = findViewById(R.id.messageTextView);
+
 
         // Khởi tạo các view
         btnXeMay = findViewById(R.id.btn_xemay);
@@ -57,6 +60,8 @@ public class HomeActivity extends AppCompatActivity {
                 // Xử lý hành động cho nút tất cả ở đây
             }
         });
+
+
 
         // Xử lý Bottom Navigation
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_nav_menu);

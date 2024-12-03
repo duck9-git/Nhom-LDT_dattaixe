@@ -7,7 +7,17 @@
         android:layout_height="match_parent"
         tools:context=".HomeActivity">
 
-
+    <TextView
+        android:id="@+id/messageTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Thông báo sẽ xuất hiện ở đây"
+        android:textSize="16sp"
+        android:layout_marginTop="16dp"
+        android:layout_gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/promotion_layout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
         <RelativeLayout
             android:id="@+id/header_layout"

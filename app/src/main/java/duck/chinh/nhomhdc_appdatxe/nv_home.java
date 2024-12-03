@@ -92,29 +92,36 @@ public class nv_home extends AppCompatActivity {
         requestsRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
-                StringBuilder requests = new StringBuilder();
-                for (DataSnapshot requestSnapshot : snapshot.getChildren()) {
-                    // Lấy dữ liệu từ Firebase
-                    String customerName = requestSnapshot.child("customerName").getValue(String.class);
-                    String destination = requestSnapshot.child("destination").getValue(String.class);
-                    String status = requestSnapshot.child("status").getValue(String.class);
+                if (snapshot.exists()) {
+                    DataSnapshot lastRequestSnapshot = null;
+                    for (DataSnapshot requestSnapshot : snapshot.getChildren()) {
+                        lastRequestSnapshot = requestSnapshot; // Gán snapshot cuối cùng
+                    }
 
-                    // Thêm yêu cầu vào danh sách
-                    requests.append("Khách hàng: ").append(customerName)
-                            .append("\nĐiểm đến: ").append(destination)
-                            .append("\nTrạng thái: ").append(status)
-                            .append("\n\n");
+                    if (lastRequestSnapshot != null) {
+                        // Lấy dữ liệu từ yêu cầu cuối cùng
+                        String customerName = lastRequestSnapshot.child("customerName").getValue(String.class);
+                        String destination = lastRequestSnapshot.child("destination").getValue(String.class);
+                        String status = lastRequestSnapshot.child("status").getValue(String.class);
+
+                        // Hiển thị yêu cầu
+                        String requestInfo = "Khách hàng: " + customerName +
+                                "\nĐiểm đến: " + destination +
+                                "\nTrạng thái: " + status;
+                        requestListTextView.setText(requestInfo);
+                    }
+                } else {
+                    // Không có yêu cầu nào
+                    requestListTextView.setText("Không có yêu cầu nào.");
                 }
-
-                // Hiển thị danh sách yêu cầu trong TextView
-                requestListTextView.setText(requests.toString());
             }
 
             @Override
             public void onCancelled(DatabaseError error) {
-                // Nếu có lỗi khi đọc dữ liệu
                 Log.e("nv_home", "Firebase Error: " + error.getMessage());
             }
         });
     }
+
+
 }
