@@ -49,7 +49,7 @@
                 android:background="#d9d9d9"
                 android:drawableStart="@drawable/vitricuaban"
                 android:drawablePadding="5dp"
-                android:hint="Vị trí của bạn"
+                android:hint="Vị trí của bạn..."
                 android:inputType="text"
                 android:padding="5dp" />
 
