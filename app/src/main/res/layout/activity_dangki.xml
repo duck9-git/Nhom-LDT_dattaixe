@@ -64,7 +64,7 @@
                     android:textStyle="bold"
                     android:textColor="@color/black"
                     android:textSize="40sp"
-                    android:layout_margin="20dp"
+                    android:layout_margin="10dp"
                     android:gravity="center"/>
 
                 <EditText
@@ -75,18 +75,18 @@
                     android:ems="10"
                     android:inputType="text"
                     android:background="@drawable/vienhoptext"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
                     android:textColorHint="#7a7d80"
                     android:textStyle="bold"
                     android:textSize="25sp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginBottom="16dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
                     android:layout_marginStart="24dp"
                     android:layout_marginEnd="24dp"
                     android:hint="Nhập tên người dùng" />
 
                 <EditText
-                    android:id="@+id/txtdienthoai"
+                    android:id="@+id/txtemail"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:paddingStart="16dp"
@@ -94,14 +94,14 @@
                     android:inputType="text"
                     android:background="@drawable/vienhoptext"
                     android:textColorHint="#7a7d80"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
                     android:textStyle="bold"
                     android:textSize="25sp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginBottom="16dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
                     android:layout_marginStart="24dp"
                     android:layout_marginEnd="24dp"
-                    android:hint="Nhập số điện thoại" />
+                    android:hint="Nhập tài khoản email" />
 
                 <EditText
                     android:id="@+id/txtmatkhau"
@@ -112,11 +112,11 @@
                     android:inputType="text"
                     android:background="@drawable/vienhoptext"
                     android:textColorHint="#7a7d80"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
                     android:textStyle="bold"
                     android:textSize="25sp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginBottom="16dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
                     android:layout_marginStart="24dp"
                     android:layout_marginEnd="24dp"
                     android:hint="Nhập mật khẩu" />
@@ -130,16 +130,35 @@
                     android:inputType="text"
                     android:background="@drawable/vienhoptext"
                     android:textColorHint="#7a7d80"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
                     android:textStyle="bold"
                     android:textSize="25sp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginBottom="16dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
                     android:layout_marginStart="24dp"
                     android:layout_marginEnd="24dp"
                     android:hint="Nhập lại mật khẩu" />
 
 
+                <RadioGroup
+                    android:id="@+id/roleGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rbKhach"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Khách hàng"
+                        android:checked="true" />
+
+                    <RadioButton
+                        android:id="@+id/rbTaixe"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tài xế" />
+                </RadioGroup>
 
                 <Button
                     android:id="@+id/btnDangki"

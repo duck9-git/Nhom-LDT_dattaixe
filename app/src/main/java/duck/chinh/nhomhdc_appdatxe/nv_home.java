@@ -1,11 +1,17 @@
 package duck.chinh.nhomhdc_appdatxe;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
@@ -19,7 +25,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class nv_home extends AppCompatActivity {
-
+    private DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://apptaixe-da6ad-default-rtdb.asia-southeast1.firebasedatabase.app/");
     private boolean isConnected = false;  // Trạng thái kết nối
     private TextView requestListTextView; // TextView hiển thị yêu cầu
 
@@ -42,7 +48,6 @@ public class nv_home extends AppCompatActivity {
         TextView offline = findViewById(R.id.offline);
         TextView batketnoi = findViewById(R.id.batketnoi);
         TextView textView13 = findViewById(R.id.textView13);
-        requestListTextView = findViewById(R.id.requestTextView); // Kết nối TextView để hiển thị yêu cầu
 
         // Chuyển Activity khi nhấn vào các nút
         dichvu.setOnClickListener(v -> {
@@ -78,50 +83,78 @@ public class nv_home extends AppCompatActivity {
                 isConnected = true;
             }
         });
+        LinearLayout requestListContainer = findViewById(R.id.requestListContainer);
 
-        // Lắng nghe yêu cầu từ Firebase
-        listenForRequests();
-    }
-
-    private void listenForRequests() {
-        // Tham chiếu đến Firebase
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference requestsRef = database.getReference("requests");
-
-        // Lắng nghe thay đổi trong Firebase
-        requestsRef.addValueEventListener(new ValueEventListener() {
+        databaseReference.child("Bookings").orderByChild("status").equalTo("pending").addValueEventListener(new ValueEventListener() {
             @Override
-            public void onDataChange(DataSnapshot snapshot) {
-                if (snapshot.exists()) {
-                    DataSnapshot lastRequestSnapshot = null;
-                    for (DataSnapshot requestSnapshot : snapshot.getChildren()) {
-                        lastRequestSnapshot = requestSnapshot; // Gán snapshot cuối cùng
-                    }
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                requestListContainer.removeAllViews(); // Xóa các yêu cầu cũ nếu có
 
-                    if (lastRequestSnapshot != null) {
-                        // Lấy dữ liệu từ yêu cầu cuối cùng
-                        String customerName = lastRequestSnapshot.child("customerName").getValue(String.class);
-                        String destination = lastRequestSnapshot.child("destination").getValue(String.class);
-                        String status = lastRequestSnapshot.child("status").getValue(String.class);
+                if (dataSnapshot.exists()) {
+                    for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                        String startLocation = snapshot.child("startLocation").getValue(String.class);
+                        String endLocation = snapshot.child("endLocation").getValue(String.class);
+                        String senderEmail = snapshot.child("senderEmail").getValue(String.class);
 
-                        // Hiển thị yêu cầu
-                        String requestInfo = "Khách hàng: " + customerName +
-                                "\nĐiểm đến: " + destination +
-                                "\nTrạng thái: " + status;
-                        requestListTextView.setText(requestInfo);
+                        // Tạo TextView hiển thị thông tin yêu cầu
+                        TextView requestInfoTextView = new TextView(nv_home.this);
+                        requestInfoTextView.setText("Yêu cầu mới từ " + senderEmail + ": Từ " + startLocation + " đến " + endLocation);
+                        requestInfoTextView.setPadding(10, 10, 10, 10);
+                        requestInfoTextView.setBackgroundColor(Color.WHITE); // Đặt nền trắng
+                        requestInfoTextView.setTextColor(Color.BLACK); // Đặt chữ màu đen
+                        requestInfoTextView.setTypeface(null, Typeface.BOLD); // Đặt chữ đậm
+
+                        // Tạo nút "Chấp nhận"
+                        Button acceptButton = new Button(nv_home.this);
+                        acceptButton.setText("Chấp nhận");
+                        acceptButton.setBackgroundColor(Color.parseColor("#4CAF50")); // Đặt màu nền xanh lá
+                        acceptButton.setTextColor(Color.WHITE); // Chữ trắng
+
+                        // Tạo nút "Hủy"
+                        Button cancelButton = new Button(nv_home.this); // Khai báo nút Hủy
+                        cancelButton.setText("Hủy");
+                        cancelButton.setBackgroundColor(Color.parseColor("#F44336")); // Đặt màu nền đỏ
+                        cancelButton.setTextColor(Color.WHITE); // Chữ trắng
+
+                        // Xử lý sự kiện cho nút "Chấp nhận"
+                        acceptButton.setOnClickListener(v -> {
+                            // Cập nhật trạng thái yêu cầu thành "accepted"
+                            snapshot.getRef().child("status").setValue("accepted");
+                            Toast.makeText(nv_home.this, "Yêu cầu đã được chấp nhận", Toast.LENGTH_SHORT).show();
+                            requestListContainer.removeView(requestInfoTextView);
+                            requestListContainer.removeView(acceptButton);
+                            requestListContainer.removeView(cancelButton);
+                        });
+
+                        // Xử lý sự kiện cho nút "Hủy"
+                        cancelButton.setOnClickListener(v -> {
+                            // Cập nhật trạng thái yêu cầu thành "canceled"
+                            snapshot.getRef().child("status").setValue("canceled");
+                            Toast.makeText(nv_home.this, "Yêu cầu đã bị hủy", Toast.LENGTH_SHORT).show();
+                            requestListContainer.removeView(requestInfoTextView);
+                            requestListContainer.removeView(acceptButton);
+                            requestListContainer.removeView(cancelButton);
+                        });
+
+                        // Thêm TextView và các nút vào LinearLayout
+                        requestListContainer.addView(requestInfoTextView);
+                        requestListContainer.addView(acceptButton);
+                        requestListContainer.addView(cancelButton);
                     }
                 } else {
-                    // Không có yêu cầu nào
-                    requestListTextView.setText("Không có yêu cầu nào.");
+                    TextView noRequestTextView = new TextView(nv_home.this);
+                    noRequestTextView.setText("Không có yêu cầu nào");
+                    requestListContainer.addView(noRequestTextView);
                 }
             }
 
             @Override
-            public void onCancelled(DatabaseError error) {
-                Log.e("nv_home", "Firebase Error: " + error.getMessage());
+            public void onCancelled(DatabaseError databaseError) {
+                Log.w("nv_home", "loadPost:onCancelled", databaseError.toException());
             }
         });
+
+
+
     }
-
-
 }
