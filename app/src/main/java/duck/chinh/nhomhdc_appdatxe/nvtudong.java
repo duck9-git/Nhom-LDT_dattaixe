@@ -3,6 +3,7 @@ package duck.chinh.nhomhdc_appdatxe;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -30,6 +31,14 @@ public class nvtudong extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(nvtudong.this, nv_home.class);
+                startActivity(intent);
+            }
+        });
+        Button dangxat = findViewById(R.id.dangxuat2);
+        dangxat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(nvtudong.this, dangnhap.class);
                 startActivity(intent);
             }
         });

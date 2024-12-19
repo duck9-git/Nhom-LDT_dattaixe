@@ -74,6 +74,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"/>
 
+
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -220,7 +221,15 @@
                 android:layout_marginEnd="16dp"/>
 
         </LinearLayout>
-
+        <Button
+            android:id="@+id/dangxuat2"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"
+            android:text="Đăng xuất"
+            android:textSize="20sp"
+            android:textStyle="bold" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
