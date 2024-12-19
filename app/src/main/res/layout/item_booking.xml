@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp"
+    android:background="@color/white"
+    android:layout_marginBottom="8dp"
+    android:elevation="2dp">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="top|center"
+        android:orientation="vertical"
+        android:background="@drawable/vien_1"
+        android:layout_margin="10dp">
+
+        <!-- TextView cho startLocation -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Điểm đón"
+            android:textSize="20sp"
+            android:textColor="@color/red"
+            android:layout_marginBottom="4dp"
+            android:layout_marginTop="4dp"/>
+        <TextView
+            android:id="@+id/textStartLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Start Location"
+            android:textSize="20sp"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/textline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="________________________________________"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:layout_marginBottom="4dp" />
+        <!-- TextView cho endLocation -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Điểm đến"
+            android:textSize="20sp"
+            android:textColor="@color/blue2"
+            android:layout_marginBottom="4dp" />
+        <TextView
+            android:id="@+id/textEndLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="End Location"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:layout_marginBottom="4dp"/>
+
+
+
+    </LinearLayout>
+
+</LinearLayout>
